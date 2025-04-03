@@ -1,18 +1,21 @@
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>org.jetbrains.plugins.template</id>
-    <name>IntelliJ Platform Plugin Template</name>
-    <vendor>JetBrains</vendor>
+    <id>com.example.pycharm.typefinder</id>
+    <name>Python Type Finder</name>
+    <vendor email="support@example.com" url="http://www.example.com">Example Company</vendor>
+    <description><![CDATA[
+        Displays the type of a Python variable under the caret in the status bar.
+
+        Features:
+        - Real-time type detection for Python variables
+        - Shows variable types in the status bar
+        - Works with variable references and declarations
+        - Non-intrusive UI integration
+    ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="org.jetbrains.plugins.template.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <postStartupActivity implementation="org.jetbrains.plugins.TypeFinder.activity.VariableTypeStatusBarUpdater"/>
+        <statusBarWidgetFactory implementation="org.jetbrains.plugins.TypeFinder.widgets.TypeFindWidgetFactory" id="TypeFindWidget"/>
     </extensions>
-
-    <applicationListeners>
-        <listener class="org.jetbrains.plugins.template.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
 </idea-plugin>
