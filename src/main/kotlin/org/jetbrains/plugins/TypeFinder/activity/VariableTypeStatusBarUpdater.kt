@@ -18,7 +18,7 @@ class VariableTypeStatusBarUpdater : ProjectActivity {
 
         editorFactory.eventMulticaster.addCaretListener(object : CaretListener {
             override fun caretPositionChanged(event: CaretEvent) {
-                event.editor?.let { editor ->
+                event.editor.let { editor ->
                     val variableInfo = logVariableName(editor, event.caret)
                     val widget = statusBar?.getWidget("TypeFindWidget") as? TypeFindWidget
                     widget?.updateText(variableInfo)
