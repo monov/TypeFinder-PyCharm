@@ -1,6 +1,7 @@
 <!-- Plugin description -->
 # Type finder for Pycharm
 ## There are two versions:
+#### (look into commit history)
 ### one implemented with Regex
 ### one implemented with Psi
 <!-- Plugin description end -->
