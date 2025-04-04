@@ -12,6 +12,7 @@ import org.jetbrains.plugins.TypeFinder.widgets.TypeFindWidget
 import com.intellij.psi.PsiDocumentManager
 import com.intellij.psi.PsiNamedElement
 import com.intellij.psi.util.PsiTreeUtil
+import com.intellij.psi.util.elementType
 import com.jetbrains.python.psi.*
 
 
@@ -50,6 +51,7 @@ class VariableTypeStatusBarUpdater : ProjectActivity {
     }
 
     private fun determineVariableType(expression: PyExpression): String? {
+//        thisLogger().warn(expression.elementType.toString())
         return when (expression) {
             is PyStringLiteralExpression -> "str"
             is PyNumericLiteralExpression -> if (expression.isIntegerLiteral) "int" else "float"
