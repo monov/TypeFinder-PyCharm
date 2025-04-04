@@ -1,5 +1,8 @@
 <!-- Plugin description -->
 # Type finder for Pycharm
+## There are two versions:
+### one implemented with Regex
+### one implemented with Psi
 <!-- Plugin description end -->
 
 # Python Code to test
